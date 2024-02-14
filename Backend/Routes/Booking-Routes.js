@@ -1,10 +1,10 @@
 import express from 'express';
 import { body } from 'express-validator';
 import { get } from 'mongoose';
-import { buyProduct } from '../Controllers/Booking-Controllers';
+import { wishProduct } from '../Controllers/Booking-Controllers.js';
 
-const bookingRoutes = express.Router();
+const BookingRoutes = express.Router();
 
-bookingRoutes.post('/buyProduct/:id', buyProduct);
+BookingRoutes.post('/buyProduct/:id', wishProduct);
 
-export default bookingRoutes;
+export default BookingRoutes;

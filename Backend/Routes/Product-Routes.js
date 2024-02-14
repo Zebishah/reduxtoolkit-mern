@@ -1,7 +1,7 @@
 import express from 'express';
 import { body } from 'express-validator';
 import { get } from 'mongoose';
-import { addProduct, deleteProduct, getProducts } from '../Controllers/Product-Controllers.js';
+import { addProduct, countProducts, deleteProduct, filterProducts, getProducts, openProduct, perPageProducts } from '../Controllers/Product-Controllers.js';
 // const { query, validationResult, body } = require('express-validator');
 const ProductRoutes = express.Router();
 ProductRoutes.post('/addProduct', [
@@ -15,4 +15,8 @@ ProductRoutes.post('/addProduct', [
 ], addProduct);
 ProductRoutes.get('/getProducts', getProducts);
 ProductRoutes.post('/deleteProduct/:id', deleteProduct);
+ProductRoutes.post('/openProduct/:id', openProduct);
+ProductRoutes.post('/filterProducts', filterProducts);
+ProductRoutes.get('/productCounter', countProducts);
+ProductRoutes.post('/perPageProducts/:page', perPageProducts);
 export default ProductRoutes;

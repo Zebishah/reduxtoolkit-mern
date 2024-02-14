@@ -1,19 +1,11 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
-let bookedProduct_Schema = new Schema({
-    proId: {
-        type: String,
-        required: true
-    },
+let cartProduct_Schema = new Schema({
     name: {
         type: String,
         required: true
     },
-    pics: [{
-        type: String,
-        required: true
-    }],
-    size: {
+    pic: {
         type: String,
         required: true
     },
@@ -21,34 +13,20 @@ let bookedProduct_Schema = new Schema({
         type: Number,
         required: true
     },
-    sells: {
-        type: Number,
-        required: true
-    },
-    discount: {
-        type: Number,
-        required: true
-    },
-    discountPrice: {
-        type: Number,
-        required: true
-    },
-    description: {
-        type: String,
-        required: true
-    },
     company: {
         type: String,
-        required: true
-    }, remaining: {
-        type: Number,
         required: true
     },
     quantity: {
         type: Number,
         required: true
-    }, category: {
+    },
+    category: {
         type: String,
+        required: true
+    },
+    discount: {
+        type: Number,
         required: true
     },
     buyer: {
@@ -64,4 +42,4 @@ let bookedProduct_Schema = new Schema({
 
 
 });
-export default mongoose.model('BookProduct', bookedProduct_Schema);
+export default mongoose.model('CartProduct', cartProduct_Schema);

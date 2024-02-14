@@ -6,7 +6,7 @@ let productsSchema = new Schema({
         required: true
     },
     price: {
-        type: String,
+        type: Number,
         required: true
     },
     company: {
@@ -17,27 +17,50 @@ let productsSchema = new Schema({
         type: Number,
         required: true
     },
+    parentId: {
+        type: String,
+        required: true
+    },
     sells: {
+        type: Number,
+        required: true
+    },
+    discount: {
+        type: Number,
+        required: true
+    },
+    description: {
         type: String,
         required: true
     },
-    pic: {
+    rating: {
         type: String,
         required: true
     },
+    pics: [{
+        type: String,
+        required: true
+    }],
+    sizes: [{
+        type: String,
+        required: true
+    }],
+    reviews: [{
+        type: String,
+        required: true
+    }],
     admins: [{
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Admin",
 
     }],
     buyers: [{
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: "User",
 
     }],
     available: {
         type: Boolean,
-
     }
-
-
 });
 export default mongoose.model('Product', productsSchema);

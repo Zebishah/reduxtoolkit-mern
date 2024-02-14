@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
-let bookedProduct_Schema = new Schema({
+let UserFavrt = new Schema({
     proId: {
         type: String,
         required: true
@@ -9,16 +9,20 @@ let bookedProduct_Schema = new Schema({
         type: String,
         required: true
     },
-    pics: [{
-        type: String,
-        required: true
-    }],
-    size: {
+    price: {
         type: String,
         required: true
     },
-    price: {
+    company: {
+        type: String,
+        required: true
+    },
+    quantity: {
         type: Number,
+        required: true
+    },
+    category: {
+        type: String,
         required: true
     },
     sells: {
@@ -29,39 +33,28 @@ let bookedProduct_Schema = new Schema({
         type: Number,
         required: true
     },
-    discountPrice: {
-        type: Number,
-        required: true
-    },
     description: {
         type: String,
         required: true
     },
-    company: {
-        type: String,
-        required: true
-    }, remaining: {
-        type: Number,
-        required: true
-    },
-    quantity: {
-        type: Number,
-        required: true
-    }, category: {
+    rating: {
         type: String,
         required: true
     },
     buyer: {
-        type: mongoose.Types.ObjectId,
-        ref: "User",
-
+        type: String,
+        required: true
     },
-    buyDate: {
-        type: Date,
-        default: Date.now, // Set the default value to the current date and time
-    },
-
-
-
+    pics: [{
+        type: String,
+        required: true
+    }],
+    sizes: [{
+        type: String,
+        required: true
+    }],
+    available: {
+        type: Boolean,
+    }
 });
-export default mongoose.model('BookProduct', bookedProduct_Schema);
+export default mongoose.model('UserFavrt', UserFavrt);

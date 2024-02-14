@@ -15,9 +15,14 @@ let userSchema = new Schema({
         required: true
     },
     buyProducts: [{
-        type: String,
-        // type: mongoose.Types.ObjectId,
-        // ref: "Product",
+
+        type: mongoose.Types.ObjectId,
+        ref: "Product",
+    },],
+    wishList: [{
+
+        type: mongoose.Types.ObjectId,
+        ref: "Product",
     },]
 })
 export default mongoose.model('User', userSchema);
